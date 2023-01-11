@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const arg = process.argv[2];
+
+if (!arg) {
+    console.error("No key provided. Usage: ./index.js <your_argument>")
+    process.exit(1);
+}
+
+const uncompressedPubkey = arg;
+
+const bitcoinjs = require('bitcoinjs-lib');
+const ECPair = require('ecpair');
+const tinysecp = require('tiny-secp256k1');
+
+const ecpair = ECPair.ECPairFactory(tinysecp);
+const key = ecpair.fromPublicKey(Buffer.from(uncompressedPubkey, 'hex'));
+
+console.log(key.__Q.toString('hex'));

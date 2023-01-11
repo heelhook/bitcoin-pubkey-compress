@@ -1,0 +1,14 @@
+{
+  "name": "bitcoin-pubkey-compress",
+  "main": "bitcoin-pubkey-compress",
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node bitcoin-pubkey-compress"
+  },
+  "dependencies": {
+    "bitcoinjs-lib": "^6.1.0",
+    "ecpair": "^2.1.0",
+    "tiny-secp256k1": "^2.2.1"
+  }
+}
